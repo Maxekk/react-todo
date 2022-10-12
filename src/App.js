@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
   const [todos,settodos] = useState([]);
   const [task,settask] = useState("");
-
+  
   const handleInput = (e) => {
     console.log(e.target.value);
     settask(e.target.value.toString());
@@ -28,7 +28,7 @@ function App() {
           onChange={handleInput}
           value={task}>
           </input>
-          <button type="submit">Add task</button>
+          <button type="submit" className='Add-task'>Add task</button>
         </form>
         <Todo todos={todos}/>
       </header>

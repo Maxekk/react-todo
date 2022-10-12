@@ -39,7 +39,7 @@
   transition: 0.5s;
 }
 
-button {
+.Add-task {
   background-color: rgb(47, 105, 105);
   border: none;
   border-radius: 10px;
@@ -48,7 +48,7 @@ button {
   transition: 0.4s;
 }
 
-button:hover {
+.Add-task:hover {
   background-color: rgb(102, 212, 212);
   border: none;
   border-radius: 10px;
@@ -57,10 +57,11 @@ button:hover {
   transition: 0.4s;
 }
 
-.todo-container {
+.Todo-Container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 20px;
 }
+
