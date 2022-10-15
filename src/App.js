@@ -1,8 +1,8 @@
-import react, { useState } from 'react';
+import react, { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './Todo';
 import { v4 as uuidv4 } from 'uuid';
-
+import { Button } from '@mui/material'
 function App() {
   const [todos,settodos] = useState([]);
   const [task,settask] = useState("");
@@ -15,9 +15,17 @@ function App() {
   const handleForm = (e) => {
     e.preventDefault();
     settodos([...todos, {id: uuidv4(), content: task, completed: false}])
-    console.log(todos);
     settask("");
   }
+
+  const restoreTasks = () => {
+    const restoredTodos = localStorage.getItem("todos");
+    console.log(restoredTodos);
+  }
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  },[todos])
 
   return (
     <div className="App">
@@ -29,8 +37,9 @@ function App() {
           value={task}>
           </input>
           <button type="submit" className='Add-task'>Add task</button>
+          <button onClick={restoreTasks} className="Restore">Restore Tasks</button>
         </form>
-        <Todo todos={todos}/>
+        <Todo todos={todos} settodos={settodos}/>
       </header>
     </div>
   );
