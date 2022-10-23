@@ -29,15 +29,22 @@ function Todo({ todos, settodos }) {
   }
   return (
     <div>
-    {todos.map(todo => (
-      <div key={todo.id} className='Todo-Container'>
-        <Checkbox id={todo.id} onClick={completeTask} checked={todo.completed}/>
-        <p>{todo.content}</p>
-        <Button variant="outlined" 
-        onClick={removeTask} 
-        id={todo.id}>Delete</Button>
-      </div>
-    ))}
+      {todos.map(todo => (
+        <div key={todo.id} className='Todo-Container'>
+          <Checkbox 
+            id={todo.id} 
+            onClick={completeTask} 
+            checked={todo.completed}
+          />
+          <p>{todo.content}</p>
+          <Button 
+            style={{backgroundColor: "#DA7F8F",color: "#f31c43",borderColor: "#f31c43"}}
+            variant="outlined" 
+            onClick={removeTask} 
+            id={todo.id}>Remove
+            </Button>
+        </div>
+      ))}
     </div>
   )
 }

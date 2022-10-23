@@ -10,7 +10,6 @@ function App() {
   const [task,settask] = useState("");
   
   const handleInput = (e) => {
-    console.log(e.target.value);
     settask(e.target.value.toString());
   }
 
@@ -36,7 +35,7 @@ function App() {
             </input>
             <button type="submit" className='Add-task'>+</button>
           </form>
-        <Todo todos={todos} settodos={settodos}/>
+          <Todo todos={todos} settodos={settodos}/>
         </div>
       </header>
     </div>
