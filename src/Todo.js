@@ -11,15 +11,31 @@ function Todo({ todos, settodos }) {
     });
   }
 
+  const completeTask = (e) => {
+    const temparr = [...todos];
+    const id = e.target.getAttribute('id');
+    temparr.forEach(element => {
+      if(element.id == id) {
+        if(element.completed == false) {
+          element.completed = true;
+          settodos(temparr);
+        }
+        else {
+          element.completed = false;
+          settodos(temparr);
+        }
+      }
+    });
+  }
   return (
     <div>
     {todos.map(todo => (
       <div key={todo.id} className='Todo-Container'>
-        <Checkbox />
+        <Checkbox id={todo.id} onClick={completeTask} checked={todo.completed}/>
         <p>{todo.content}</p>
         <Button variant="outlined" 
         onClick={removeTask} 
-        id={todo.id}>Remove</Button>
+        id={todo.id}>Delete</Button>
       </div>
     ))}
     </div>

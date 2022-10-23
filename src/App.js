@@ -2,9 +2,11 @@ import react, { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './Todo';
 import { v4 as uuidv4 } from 'uuid';
-import { Button } from '@mui/material'
+import { Button } from '@mui/material';
+
 function App() {
-  const [todos,settodos] = useState([]);
+  const initialState = JSON.parse(localStorage.getItem("todos")) || [];
+  const [todos,settodos] = useState(initialState);
   const [task,settask] = useState("");
   
   const handleInput = (e) => {
@@ -18,11 +20,6 @@ function App() {
     settask("");
   }
 
-  const restoreTasks = () => {
-    const restoredTodos = localStorage.getItem("todos");
-    console.log(restoredTodos);
-  }
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   },[todos])
@@ -30,16 +27,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <form onSubmit={handleForm}>
-          <input type="text" 
-          className="Main-input" 
-          onChange={handleInput}
-          value={task}>
-          </input>
-          <button type="submit" className='Add-task'>Add task</button>
-          <button onClick={restoreTasks} className="Restore">Restore Tasks</button>
-        </form>
+        <div className="Container">
+          <form onSubmit={handleForm}>
+            <input type="text" 
+            className="Main-input" 
+            onChange={handleInput}
+            value={task}>
+            </input>
+            <button type="submit" className='Add-task'>+</button>
+          </form>
         <Todo todos={todos} settodos={settodos}/>
+        </div>
       </header>
     </div>
   );

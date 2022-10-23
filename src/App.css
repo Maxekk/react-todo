@@ -7,13 +7,25 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #A7BBC7;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Container {
+  background-color: #E1E5EA;
+  width: 75vw;
+  margin-top: 5vh;
+  border-radius: 5PX;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .Main-input {
@@ -23,7 +35,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid 2px aqua;
+  border-bottom: solid 2px #DA7F8F;
   margin-top: 15vh;
   transition: 0.5s;
 }
@@ -36,24 +48,23 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid 2px aqua;
+  border-bottom: solid 2px #e91a40;
   margin-top: 15vh;
   transition: 0.5s;
 }
 
 .Add-task {
-  background-color: rgb(47, 105, 105);
+  background-color: #DA7F8F;
+  width: 7vw;
   border: none;
-  border-radius: 10px;
   height: 6vh;
   margin-left: 4vw;
   transition: 0.4s;
 }
 
 .Add-task:hover {
-  background-color: rgb(102, 212, 212);
+  background-color: #f31c43;
   border: none;
-  border-radius: 10px;
   height: 6vh;
   margin-left: 4vw;
   transition: 0.4s;
@@ -89,3 +100,4 @@ Button {
 p {
   font-family: 'Space Grotesk', sans-serif;
 }
+
