@@ -41,7 +41,7 @@ input:focus,textarea:focus{
   border-left: none;
   border-right: none;
   border-bottom: solid 2px #DA7F8F;
-  margin-top: 15vh;
+  margin-top: 1vh;
   transition: 0.5s;
 }
 
@@ -56,6 +56,7 @@ input:focus,textarea:focus{
   border-bottom: solid 2px #e91a40;
   margin-top: 15vh;
   transition: 0.5s;
+  margin-top: 1vh;
 }
 
 .Add-task {
@@ -67,6 +68,7 @@ input:focus,textarea:focus{
   margin-left: 4vw;
   font-size: 35px;
   transition: 0.4s;
+  margin-top: 1vh;
 }
 
 .Add-task:hover {
@@ -76,6 +78,7 @@ input:focus,textarea:focus{
   color: white;
   margin-left: 4vw;
   transition: 0.4s;
+  margin-top: 1vh;
 }
 
 .Todo-Container {
